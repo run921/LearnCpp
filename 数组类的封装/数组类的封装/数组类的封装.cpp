@@ -8,7 +8,7 @@ void test01()
     //创建数组
     MyArray *array = new MyArray(30);
     MyArray array3 = *array;
-    cout << "array3" << endl;
+   
     MyArray *array4 = new MyArray(*array);
     MyArray* array2(array);
     //delete array;     //此处delete，崩
@@ -25,6 +25,13 @@ void test01()
         cout << array2->getData(i) << endl;
     }
     delete array;
+
+    //[]重载测试
+    array3.push_Back(1000);
+    cout << array3.getData(0) << endl;
+    cout << array3[0] << endl;
+    array3[0] = 222;        //operator[]返回值为int相当于令1000 = 222；用引用&将返回作为左值
+    cout << array3[0] << endl;
 }
 
 int main()

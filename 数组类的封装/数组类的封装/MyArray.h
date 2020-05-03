@@ -8,8 +8,10 @@ public:
 	MyArray();	//默认构造
 	MyArray(int capacity);
 	MyArray(const MyArray &array);		//拷贝构造
-
 	~MyArray();
+
+	//重载[]运算符
+	int& operator[](int index);
 
 	//尾插法
 	void push_Back(int val);

@@ -37,6 +37,11 @@ MyArray::~MyArray()
 		this->pAddress = NULL;
 	}
 }
+//[]жиди
+int& MyArray::operator[](int index)
+{
+	return this->pAddress[index];
+}
 
 void MyArray::push_Back(int val)
 {
