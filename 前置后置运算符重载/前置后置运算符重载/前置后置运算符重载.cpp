@@ -17,6 +17,12 @@ public:
         return *this;
     }
 
+    //MyInteger operator++()       //如果返回不是引用，那么
+    //{                            //myInt = 0; ++(++myInt)之后myInt的值为1 
+    //    this->m_Num++;
+    //    return *this;
+    //}
+
     //后置++重载
     MyInteger operator++(int)   //int占位区分前后置,返回“值”
     {
