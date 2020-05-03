@@ -4,7 +4,7 @@ using namespace std;
 
 class MyInteger 
 {
-    //friend ostream & operator<<(ostream & cout, MyInteger & m);    //可以访问私有成员变量
+    friend ostream & operator<<(ostream & cout, MyInteger m);    //可以访问私有成员变量
 public:
     MyInteger()
     {
