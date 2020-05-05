@@ -14,7 +14,6 @@ public:
         cout << "BaseÖĞfuncµ÷ÓÃ" << endl;
     }
 
-
     int  m_A;
 };
 
