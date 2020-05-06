@@ -2,7 +2,7 @@
 #include<iostream>  
 using namespace std;
 
-class Animal 
+class Animal        //sizeof(Animal)不加virtual大小为1，加上后大小为4，多了个vfptr指针
 {
 public:
     virtual void speak()
