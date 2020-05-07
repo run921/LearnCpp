@@ -9,6 +9,11 @@ public:
     {
         cout << "动物在说话" << endl;
     }
+    virtual void eat()
+    {
+        cout << "动物在吃" << endl;
+    }
+
 };
 
 class Cat :public Animal
@@ -18,6 +23,11 @@ public:
     {
         cout << "猫在说话" << endl;
     }
+
+     void eat()
+     {
+         cout << "猫在吃鱼" << endl;
+     }
 };
 
 //调用doSpeak,speak函数的地址早绑定好了，早绑定，静态联编，编译阶段就确定好了地址
@@ -34,9 +44,24 @@ void test01()
     doSpeak(cat);   //如果存在继承关系，编译器允许进行类型转换
 }
 
+void tast02()
+{
+    cout << sizeof(Animal) << endl;
+    //父类指针指向子类对象，多态
+    Animal* animal = new Cat;
+    //animal->speak();        //调用的Cat的speak方法
+    //上述语句本质
+    //*(int*)*(int*)animal表示Cat::speak的地址
+    ((void(*)()) * (int*)*(int*)animal)();
+    //*((int*)*(int*)animal+1)表示Cat::eat的地址
+    ((void(*)())(*((int*)*(int*)animal + 1)))();
+} 
+
 int main()
 {
-    test01();
+    //test01();
+    tast02();
+
     system("pause");
     return EXIT_SUCCESS;
 
